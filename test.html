@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Depresión</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modelo de Predicción de Depresión</h1>
+        <form id="predict-form">
+
+            <div class="form-group">
+                <label>1.- Género:</label>
+                <p class="field-description">Selecciona tu género </p>
+                <select name="Gender">
+                    <option value="Female">Femenino</option>
+                    <option value="Male">Masculino</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>2.- Edad:</label>
+                <p class="field-description">Ingresa tu edad</p>
+                <input type="number" name="Age" required>
+            </div>
+
+            <input type="hidden" name="Profession" value="Student">
+
+            <div class="form-group">
+                <label>3.- Presión Académica:</label>
+                <p class="field-description">1 = sin presión | 10 = presión académica muy intensa</p>
+                <div class="radio-group" data-name="Academic Pressure"></div>
+            </div>
+
+            <div class="form-group">
+                <label>4.- Presión Laboral:</label>
+                <p class="field-description">1 = sin presión | 10 = presión laboral extrema</p>
+                <div class="radio-group" data-name="Work Pressure"></div>
+            </div>
+
+            <div class="form-group">
+                <label>5.- Promedio Ponderado (0 a 20):</label>
+                <p class="field-description">Tu promedio general actual (0 a 20).</p>
+                <input type="number" name="CGPA" step="0.1" min="0" max="20" required>
+            </div>
+
+            <div class="form-group">
+                <label>6.- Satisfacción con Estudios:</label>
+                <p class="field-description">1 = muy insatisfecho | 10 = completamente satisfecho</p>
+                <div class="radio-group" data-name="Study Satisfaction"></div>
+            </div>
+
+            <div class="form-group">
+                <label>7.- Satisfacción Laboral:</label>
+                <p class="field-description">1 = muy insatisfecho | 10 = completamente satisfecho</p>
+                <div class="radio-group" data-name="Job Satisfaction"></div>
+            </div>
+
+            <div class="form-group">
+                <label>8.- Horas de Sueño:</label>
+                <p class="field-description">Selecciona el rango de horas promedio que duermes por día.</p>
+                <select name="Sleep Duration">
+                    <option value="Less than 5 hours">Menos de 5 horas</option>
+                    <option value="5-6 hours">5-6 horas</option>
+                    <option value="7-8 hours">7-8 horas</option>
+                    <option value="More than 8 hours">Más de 8 horas</option>
+                    <option value="Others">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>9.- Hábitos Alimenticios:</label>
+                <p class="field-description">Describe el tipo general de dieta que sueles seguir.</p>
+                <select name="Dietary Habits">
+                    <option value="Healthy">Saludable</option>
+                    <option value="Moderate">Moderado</option>
+                    <option value="Unhealthy">No saludable</option>
+                    <option value="Others">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>10.- ¿Has tenido pensamientos suicidas?</label>
+                <p class="field-description">Selecciona si alguna vez has tenido pensamientos suicidas.</p>
+                <select name="Have you ever had suicidal thoughts ?">
+                    <option value="No">No</option>
+                    <option value="Yes">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>11.- Horas de trabajo/estudio (promedio diario):</label>
+                <p class="field-description">Ingresa tu número de horas de estudio promedio diario.</p>
+                <input type="number" name="Work/Study Hours" min="0" max="24" required>
+            </div>
+
+            <div class="form-group">
+                <label>12.- Estrés Financiero:</label>
+                <p class="field-description">1 = sin estrés | 10 = estrés financiero muy alto</p>
+                <div class="radio-group" data-name="Financial Stress"></div>
+            </div>
+
+            <div class="form-group">
+                <label>13.- ¿Antecedentes familiares de enfermedades mentales?</label>
+                <p class="field-description">Indica si hay casos familiares con problemas de salud mental.</p>
+                <select name="Family History of Mental Illness">
+                    <option value="No">No</option>
+                    <option value="Yes">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><input type="checkbox" id="consentimiento"> Acepto el tratamiento de mis datos personales</label>
+                <p class="field-description">Tu información será utilizada únicamente con fines académicos.</p>
+            </div>
+
+            <button type="submit" id="submit-button" disabled>Predecir</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
