@@ -54,7 +54,7 @@ document.getElementById("predict-form").addEventListener("submit", async functio
             jsonData["Job Satisfaction"] = 6 - parseInt(jsonData["Job Satisfaction"]);
         }
 
-        const response = await fetch("https://api-ml-m9js.onrender.com", {
+        const response = await fetch("https://api-ml-m9js.onrender.com/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(jsonData)
