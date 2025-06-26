@@ -1,6 +1,6 @@
 function crearRadios(nombreCampo) {
     const contenedor = document.querySelector(`.radio-group[data-name='${nombreCampo}']`);
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 0; i <= 5; i++) {
         const radio = document.createElement("input");
         radio.type = "radio";
         radio.name = nombreCampo;
@@ -56,8 +56,9 @@ document.getElementById("predict-form").addEventListener("submit", async functio
         if (jsonData["Work Pressure"]){
             jsonData["Work Pressure"]=6 - parseInt(jsonData["Work Pressure"] );
         }
-
-        const response = await fetch("https://api-ml-m9js.onrender.com/predict", {
+        //http://127.0.0.1:5000 para local 
+        //https://api-ml-m9js.onrender.com/predict para remoto
+        const response = await fetch("http://127.0.0.1:5000/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(jsonData)
