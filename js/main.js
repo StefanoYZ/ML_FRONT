@@ -53,6 +53,9 @@ document.getElementById("predict-form").addEventListener("submit", async functio
         if (jsonData["Job Satisfaction"]) {
             jsonData["Job Satisfaction"] = 6 - parseInt(jsonData["Job Satisfaction"]);
         }
+        if (jsonData["Work Pressure"]){
+            jsonData["Work Pressure"]=6 - parseInt(jsonData["Work Pressure"] );
+        }
 
         const response = await fetch("https://api-ml-m9js.onrender.com/predict", {
             method: "POST",
