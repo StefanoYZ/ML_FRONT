@@ -189,3 +189,13 @@ button:disabled {
     font-size: 1rem;
     margin-top: 10px;
 }
+
+button.download-button {
+    background-color: #28a745;
+    margin-top: 8px;
+}
+
+button.download-button:hover {
+    background-color: #218838;
+    margin-top: 8px;
+}
